@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+<section class = "articles">
+{% for cathegorie in cathegories %}
+  <article>
+   <h2> {{ cathegorie.title}} </h2>
+   <div class ="content">
+     <p>{{ cathegorie.description }} </P> 
+   </div>
+  </article>
+  {% endfor %}
+<a href = "{{ path('show_article') }}" class= "btn-primary"> consulter !</a>
+</section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+  <section class = "articles">
+
+    <article>
+      <h2> {{ article.title }} </h2>
+      <div class ="metadata"> Ecrire le {{article.createAt | date('d/m/y') }} a {{ article.createAt | date('H:i')}} </div>
+      <div class ="content">
+        <img src ="{{article.img}}" alt = "">
+        <p>{{ article.content }} </P>
+        <p> En grammaire traditionnelle, l’article a plusieurs définitions.<br/>
+          Selon l’une d’elles,<br/> c’est une partie du discours à fonction grammaticale, 
+          qui<br/> accompagne le nom dans certaines langues, indiquant dans quelle mesure </br>
+        ce que celui-ci dénomme est connu des participants <br/> à une situation de communication donnée</p>
+      </div>
+    </article>
+     {% for comment in article.comments %}
+      <article>
+        <h2> LES COMMANTAIRES </h2>
+        <h1> {{ comment.auteur}} </h1>
+        <div class ="metadata"> Ecrire le {{ comment.createAt | date('d/m/y') }} a {{ comment.createAt | date('H:i')}} </div>
+        <div class ="content">
+          <p>{{ comment.content | raw }} </P>
+        </div>
+     </article>
+    {% endfor %}
+  
+ </section>
+
+{% endblock %}
