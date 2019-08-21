@@ -94,13 +94,13 @@ class TestController extends AbstractController
      */
     public function showArticle()
     {
-       $categorie = $this->getDoctrine()->getRepository(Cathegorie::class)
+       $categories = $this->getDoctrine()->getRepository(Cathegorie::class)
         ->findAll();
-       $articles = $categorie->getArticle();
+       $articles = $categories->getArticle();
 
          return $this->render('test/showArticle.html.twig', [
              'controller_name' => 'TestController',
-             'articles' => $articles
+             'article' => $articles
          ]);
     }
 
