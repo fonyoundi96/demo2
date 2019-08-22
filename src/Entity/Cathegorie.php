@@ -10,6 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="App\Repository\CathegorieRepository")
  */
 class Cathegorie
+
+
 {
     /**
      * @ORM\Id()
